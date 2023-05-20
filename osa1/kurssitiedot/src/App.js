@@ -14,10 +14,8 @@ const App = () => {
 
   return (
     <div>
-      <Header kurssi={course}/>
-	  <Content osa1 = {part1} harjoitus1={exercises1}
-      osa2 = {part2} harjoitus2={exercises2} 
-      osa3 = {part3} harjoitus3={exercises3} />
+      <Header kurssi={course} />
+	  <Content osa1={part1}  harjoitus1={exercises1} osa2={part2}  harjoitus2={exercises2} osa3={part3}  harjoitus3={exercises3} />
 	  <Total harjoitukset={exercises1 + exercises2 + exercises3}/>
     </div>
   )
@@ -31,13 +29,20 @@ const Header = (props) => {
   )
 }
 
+const Part = (props) => {
+  return(
+    <div>
+      <p>{props.osa} {props.harjoitus} </p>
+    </div>
+  )
+}
+
 const Content = (props) => {
   return(
     <div>
-      <p>{props.osa1} {props.harjoitus1}</p>
-      <p>{props.osa2} {props.harjoitus2}</p>
-      <p>{props.osa3} {props.harjoitus3}</p>
-
+      <Part osa={props.osa1} harjoitus={props.harjoitus1} />
+      <Part osa={props.osa2} harjoitus={props.harjoitus2} />
+      <Part osa={props.osa3} harjoitus={props.harjoitus3} />
     </div>
   )
 }
