@@ -1,22 +1,26 @@
 const App = () => {
   const course = 'Half Stack application development'
-  const part1 = 'Fundamentals of React'
-  const exercises1 = 10
-  const part2 = 'Using props to pass data'
-  const exercises2 = 7
-  const part3 = 'State of a component'
-  const exercises3 = 14
-  const parts = [
-  {part: part1, excercises: exercises1},
-  {part: part2, excercises: exercises2},
-  {part: part3, excercises: exercises3},
-  ]
+  const part1 = {
+    name: 'Fundamentals of React',
+    exercises: 10
+  }
+  
+  const part2 = {
+    name: 'Using props to pass data',
+    exercises: 7
+  }
+  
+  const part3 = {
+    name: 'State of a component',
+    exercises: 14
+  }
+
 
   return (
     <div>
       <Header kurssi={course} />
-	  <Content osa1={part1}  harjoitus1={exercises1} osa2={part2}  harjoitus2={exercises2} osa3={part3}  harjoitus3={exercises3} />
-	  <Total harjoitukset={exercises1 + exercises2 + exercises3}/>
+	  <Content osa1={part1.name}  harjoitus1={part1.exercises} osa2={part2.name}  harjoitus2={part2.exercises} osa3={part3.name}  harjoitus3={part3.exercises} />
+	  <Total harjoitukset={part1.exercises + part2.exercises + part3.exercises} />
     </div>
   )
 }
